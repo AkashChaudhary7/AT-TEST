@@ -1,0 +1,6 @@
+{
+  "name": "Target Exam Practice & Analytics Suite",
+  "description": "An exceptionally modern, high-contrast targeted MCQ preparation platform. Features custom focus exams, active countdown clocks, spaced repetition mistakes logs, customizable mock builders, and Gemini-powered smart diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

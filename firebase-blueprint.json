@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "Exam": {
+      "title": "Exam",
+      "description": "An examination entity.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "shortName": { "type": "string" },
+        "targetDate": { "type": "string", "format": "date-time" },
+        "category": { "type": "string" },
+        "totalVacancy": { "type": "number" },
+        "syllabusBrief": { "type": "string" },
+        "difficultyWeightage": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Question": {
+      "title": "Question",
+      "description": "A multiple choice question.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "options": { "type": "array" },
+        "correctOptionIndex": { "type": "number" },
+        "explanation": { "type": "string" },
+        "subject": { "type": "string" },
+        "topic": { "type": "string" },
+        "subtopic": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "sourceType": { "type": "string" },
+        "timesAnswered": { "type": "number" },
+        "timesCorrect": { "type": "number" },
+        "targetExam": { "type": "string" }
+      },
+      "required": ["id", "question"]
+    },
+    "SourceDocument": {
+      "title": "SourceDocument",
+      "description": "A source document for questions.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "content": { "type": "string" },
+        "wordCount": { "type": "number" },
+        "uploadedAt": { "type": "string", "format": "date-time" },
+        "targetExam": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "HtmlMockTest": {
+      "title": "HtmlMockTest",
+      "description": "A mock test in HTML format.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "htmlContent": { "type": "string" },
+        "uploadedAt": { "type": "string", "format": "date-time" },
+        "targetExam": { "type": "string" }
+      },
+      "required": ["id", "name", "htmlContent"]
+    }
+  },
+  "firestore": {
+[TargetContent:
+    "/exams/{examId}": {
+      "schema": "Exam",
+      "description": "Collection of exams."
+    },
+    "/questions/{questionId}": {
+      "schema": "Question",
+      "description": "Collection of questions."
+    },
+    "/documents/{documentId}": {
+      "schema": "SourceDocument",
+      "description": "Collection of documents."
+    },
+    "/htmlmocktests/{testId}": {
+      "schema": "HtmlMockTest",
+      "description": "Collection of HTML mock tests."
+    }
+  }
+}
